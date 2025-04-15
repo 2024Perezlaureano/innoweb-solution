@@ -1,0 +1,131 @@
+.pre-vacantes {
+    background: #f8fafc;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+}
+
+.portal-vacantes {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-vacantes {
+    text-align: center;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.titulo-vacantes {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.5rem;
+    color: #1E3A8A;
+    margin-bottom: 1rem;
+}
+
+.subtitulo-vacantes {
+    color: #7F8C8D;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.valor-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+}
+
+.valor-icono {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.beneficio-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 1rem;
+}
+
+.beneficio-item i {
+    font-size: 2rem;
+    color: #2ECC71;
+    margin-bottom: 1rem;
+}
+
+.llamado-accion {
+    text-align: center;
+    padding: 4rem 0;
+    background: #1E3A8A;
+    color: white;
+    border-radius: 2rem;
+    margin-top: 4rem;
+}
+
+.boton-principal {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #2ECC71;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 2rem 0;
+}
+
+.boton-principal:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+}
+
+.mini-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.mini-galeria div {
+    height: 150px;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .titulo-vacantes {
+        font-size: 2.5rem;
+    }
+    
+    .valores-grid,
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mini-galeria {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}

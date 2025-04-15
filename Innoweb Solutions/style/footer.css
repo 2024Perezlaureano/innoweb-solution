@@ -1,0 +1,186 @@
+
+.signature-footer {
+    position: relative;
+    background: #0a192f;
+    color: #e6f1ff;
+    padding: 8rem 5% 4rem;
+    overflow: hidden;
+}
+
+.footer-wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0 70L1200 0V120H0Z" fill="%230a192f"/></svg>');
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hologram-link {
+    position: relative;
+    color: #7F8C8D;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.hologram-link:hover {
+    color: #2ECC71;
+    transform: translateX(10px);
+}
+
+.hologram-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #2ECC71;
+    transition: 0.4s;
+}
+.flex-footer{
+    display: flex;
+}
+
+.hologram-link:hover::before {
+    width: 100%;
+}
+.footer-logo{
+    width: 150px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.quantum-button {
+    position: relative;
+    background: #1E3A8A;
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    top: 30px;
+}
+
+.quantum-button:hover {
+    background: #2ECC71;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+}
+
+
+.neon-input {
+    background: transparent;
+    border: 1px solid #2ECC71;
+    padding: 1rem;
+    color: white;
+    width: 100%;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.neon-input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+}
+
+
+.hologram-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2ECC71;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.hologram-icon:hover {
+    transform: translateY(-5px);
+    color: #E74C3C;
+}
+
+.hologram-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #2ECC71;
+    border-radius: 50%;
+    animation: hologram-pulse 2s infinite;
+}
+
+.matrix-rights {
+    text-align: center;
+    margin-top: 4rem;
+    position: relative;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(127, 140, 141, 0.2);
+}
+
+.code-effect {
+    position: relative;
+    display: inline-block;
+}
+
+.code-effect::after {
+    content: '010101';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #2ECC71;
+    opacity: 0.3;
+    animation: code-glitch 1s infinite;
+}
+
+@keyframes hologram-pulse {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 0.6; transform: scale(1); }
+    100% { opacity: 0.3; transform: scale(0.8); }
+}
+
+@keyframes code-glitch {
+    0% { clip-path: inset(10% 0 90% 0); }
+    50% { clip-path: inset(40% 0 60% 0); }
+    100% { clip-path: inset(10% 0 90% 0); }
+}
+.precision-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 5%;
+}
+
+.floating-card {
+    padding: 1.5rem;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .tech-list li {
+        font-size: 0.9rem;
+    }
+}
+

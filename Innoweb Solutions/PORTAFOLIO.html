@@ -1,0 +1,297 @@
+<section class="portafolio" id="portafolio">
+    <div class="contenedor-portafolio">
+        <h2 class="titulo-seccion">Proyectos Destacados</h2>
+        
+        <!-- Filtros -->
+        <div class="filtros-portafolio">
+            <button class="filtro active" data-categoria="todo">Todos</button>
+            <button class="filtro" data-categoria="web">Diseño Web</button>
+            <button class="filtro" data-categoria="ecommerce">E-commerce</button>
+            <button class="filtro" data-categoria="app">Aplicaciones</button>
+            <button class="filtro" data-categoria="branding">Branding</button>
+        </div>
+
+        <!-- Grid de Proyectos -->
+        <div class="grid-proyectos">
+            <!-- Proyecto 1 -->
+            <article class="proyecto" data-categoria="web" data-modal="1">
+                <div class="proyecto-imagen">
+                    <img src="proyecto1.jpg" alt="Plataforma SaaS">
+                    <div class="proyecto-overlay">
+                        <div class="overlay-contenido">
+                            <h3>Plataforma Educativa</h3>
+                            <div class="categorias">
+                                <span>Diseño UI/UX</span>
+                                <span>Desarrollo Frontend</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="proyecto-info">
+                    <h4>Learning Hub Pro</h4>
+                    <div class="tecnologias">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Repetir estructura para más proyectos -->
+        </div>
+    </div>
+
+    <!-- Modal de Proyecto -->
+    <div class="modal-portafolio">
+        <div class="modal-contenido">
+            <button class="cerrar-modal"><i class="las la-times"></i></button>
+            <div class="modal-cuerpo">
+                <!-- Contenido dinámico -->
+            </div>
+            <div class="modal-navegacion">
+                <button class="nav-proyecto anterior"><i class="las la-arrow-left"></i></button>
+                <button class="nav-proyecto siguiente"><i class="las la-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+:root {
+    --azul-principal: #1E3A8A;
+    --verde-innovador: #2ECC71;
+    --gris-secundario: #7F8C8D;
+}
+
+.portafolio {
+    padding: 6rem 2rem;
+    background: #f8fafc;
+}
+
+.contenedor-portafolio {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8rem;
+    color: var(--azul-principal);
+    margin-bottom: 3rem;
+}
+
+.filtros-portafolio {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.filtro {
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--azul-principal);
+    background: transparent;
+    color: var(--azul-principal);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtro.active {
+    background: var(--azul-principal);
+    color: white;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.proyecto {
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.proyecto:hover {
+    transform: translateY(-10px);
+}
+
+.proyecto-imagen {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.proyecto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.proyecto:hover img {
+    transform: scale(1.05);
+}
+
+.proyecto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(30,58,138,0.9) 0%, rgba(46,204,113,0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.proyecto:hover .proyecto-overlay {
+    opacity: 1;
+}
+
+.overlay-contenido {
+    color: white;
+}
+
+.overlay-contenido h3 {
+    margin-bottom: 0.5rem;
+}
+
+.categorias {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.categorias span {
+    background: rgba(255,255,255,0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.proyecto-info {
+    padding: 1.5rem;
+}
+
+.proyecto-info h4 {
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+}
+
+.tecnologias {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tecnologias span {
+    background: var(--verde-innovador);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.modal-portafolio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background: white;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 2rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--azul-principal);
+}
+
+@media (max-width: 768px) {
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+    }
+    
+    .filtros-portafolio {
+        gap: 0.5rem;
+    }
+    
+    .filtro {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Filtrado de proyectos
+    const filtros = document.querySelectorAll('.filtro');
+    const proyectos = document.querySelectorAll('.proyecto');
+
+    filtros.forEach(filtro => {
+        filtro.addEventListener('click', () => {
+            const categoria = filtro.dataset.categoria;
+            
+            filtros.forEach(f => f.classList.remove('active'));
+            filtro.classList.add('active');
+            
+            proyectos.forEach(proyecto => {
+                proyecto.style.display = 'none';
+                if(categoria === 'todo' || proyecto.dataset.categoria === categoria) {
+                    proyecto.style.display = 'block';
+                }
+            });
+        });
+    });
+
+    // Modal de proyecto
+    const modal = document.querySelector('.modal-portafolio');
+    const cerrarModal = document.querySelector('.cerrar-modal');
+    
+    document.querySelectorAll('.proyecto').forEach(proyecto => {
+        proyecto.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            // Aquí cargar contenido dinámico según el proyecto
+        });
+    });
+
+    cerrarModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if(e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+</script>

@@ -1,0 +1,422 @@
+
+<section class="formulario-empleo">
+    <div class="contenedor-formulario">
+        <h2 class="titulo-seccion">Únete al Equipo Innoweb</h2>
+        <form id="formulario-vacante" class="formulario-vacante" enctype="multipart/form-data">
+            <!-- Campos del formulario... -->
+            <fieldset class="grupo-formulario">
+                <legend class="leyenda-formulario">Información Personal</legend>
+                
+                <div class="grid-formulario">
+                    <div class="grupo-input">
+                        <label for="nombre" class="etiqueta-input">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" class="input-formulario" required 
+                            pattern="[A-Za-záéíóúñ ]+" title="Solo letras y espacios">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="email" class="etiqueta-input">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="input-formulario" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="telefono" class="etiqueta-input">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" class="input-formulario" 
+                            pattern="[0-9]{9,15}" title="Número telefónico válido">
+                    </div>
+
+                    <!-- <div class="grupo-input">
+                        <label for="linkedin" class="etiqueta-input">Perfil LinkedIn</label>
+                        <input type="url" id="linkedin" name="linkedin" class="input-formulario" 
+                            pattern="^(https?:\/\/)?(www\.)?linkedin\.com\/(in|pub|company)\/[a-zA-Z0-9-]+\/?$"
+                            placeholder="Ej: https://linkedin.com/in/tu-perfil">
+                        <small class="ayuda-input">Ejemplo válido: linkedin.com/in/nombre-apellido</small>
+                    </div> -->
+                </div>
+            </fieldset>
+
+            <!-- Detalles de la Vacante -->
+            <fieldset class="grupo-formulario">
+                <legend class="leyenda-formulario">Detalles de la Vacante</legend>
+                
+                <div class="grid-formulario">
+                    <div class="grupo-input">
+                        <label for="posicion" class="etiqueta-input">Posición Solicitada</label>
+                        <select id="posicion" name="posicion" class="input-formulario" required>
+                            <option value="">Seleccione una opción</option>
+                            <option>Desarrollador Front-end</option>
+                            <option>Desarrollador Back-end</option>
+                            <option>Diseñador UX/UI</option>
+                            <option>Especialista SEO</option>
+                            <option>Project Manager</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="experiencia" class="etiqueta-input">Años de Experiencia</label>
+                        <input type="number" id="experiencia" name="experiencia" 
+                            class="input-formulario" min="0" max="50" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="salario" class="etiqueta-input">Expectativa Salarial (USD)</label>
+                        <input type="text" id="salario" name="salario" class="input-formulario" 
+                            placeholder="Ej: $2500 - $3000">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="disponibilidad" class="etiqueta-input">Disponibilidad</label>
+                        <select id="disponibilidad" name="disponibilidad" class="input-formulario" required>
+                            <option value="">Seleccione...</option>
+                            <option>Full-Time</option>
+                            <option>Part-Time</option>
+                            <option>Freelance</option>
+                            <option>Por Proyecto</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Documentación -->
+            <fieldset class="grupo-formulario">
+                <legend class="leyenda-formulario">Documentación</legend>
+                
+                <div class="grid-formulario">
+
+                    <div class="grupo-input">
+                        <label for="portafolio" class="etiqueta-input">Portafolio o Enlace</label>
+                        <input type="text" id="portafolio" name="portafolio" 
+                            class="input-formulario" placeholder="URL o archivo .zip">
+                    </div>
+
+                    <div class="grupo-input texto-completo">
+                        <label for="carta" class="etiqueta-input">Carta de Presentación</label>
+                        <textarea id="carta" name="carta" class="input-formulario" 
+                            rows="5" maxlength="1000" placeholder="Máximo 1000 caracteres"></textarea>
+                        <div class="contador-caracteres"><span id="contador">0</span>/1000</div>
+                    </div>
+                </div>
+            </fieldset>
+           <!-- Términos y Condiciones -->
+        <div class="footer">
+         <div class="grid-1">
+           <div class="grupo-checkbox">
+            <label for="privacidad" class="checkbox-label">
+                Enviar CV a <a href="innowebsolutionslaureano@gmail.com" class="enlace-destacado">innowebsolutionslaureano@gmail.com</a> y el perfil linkedln
+        
+            </label>
+           <div class="grupo-checkbox">
+            <input type="checkbox" id="privacidad" name="privacidad" class="checkbox-input" required>
+            <label for="privacidad" class="checkbox-label">
+                Acepto la <a href="#" class="enlace-destacado">política de privacidad</a> y el 
+                tratamiento de mis datos
+            </label>
+        </div>
+
+        <div class="grupo-checkbox">
+            <input type="checkbox" id="notificaciones" name="notificaciones" class="checkbox-input">
+            <label for="notificaciones" class="checkbox-label">
+                Deseo recibir notificaciones sobre nuevas vacantes
+            </label>
+        </div>
+        </div>
+        <button type="submit" class="boton-enviar" id="boton-enviar">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Solicitud
+        </button>
+        <div id="mensaje-estado" class="mensaje-estado"></div>
+        </div>
+    </form>
+</div>
+</section>
+
+<style>
+/* Estilos corregidos */
+
+.footer{
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+    display: grid;
+}
+.mensaje-estado.visible {
+display: block !important;
+}
+.formulario-empleo {
+    background: #f8fafc;
+    padding: 4rem 5%;
+}
+/* CSS mejorado */
+.mensaje-estado {
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    height: 0;
+    overflow: hidden;
+}
+
+.mensaje-estado.visible {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+}
+
+.input-invalido {
+    border-color: #e74c3c !important;
+    background: #fdedec;
+}
+.ayuda-input {
+    display: block;
+    color: #7F8C8D;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.mensaje-error-input {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+.mensaje-estado {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.mensaje-exito {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.contenedor-formulario {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+}
+
+.titulo-seccion {
+    color: #1E3A8A;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.grupo-formulario {
+    border: 2px solid rgba(30, 58, 138, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.leyenda-formulario {
+    color: #2ECC71;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    padding: 0 1rem;
+}
+
+.grid-formulario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.grupo-input {
+    margin-bottom: 1.5rem;
+}
+
+.etiqueta-input {
+    display: block;
+    color: #1E3A8A;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input-formulario {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-formulario:focus {
+    border-color: #2ECC71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+    outline: none;
+}
+
+select.input-formulario {
+    appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='%231E3A8A' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 0.8rem center/1.5rem;
+}
+
+.boton-enviar {
+    background: #2ECC71;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.boton-enviar:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.grupo-checkbox {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-input {
+    margin-right: 0.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: #2ECC71;
+}
+
+.checkbox-label {
+    color: #1E3A8A;
+}
+
+.enlace-destacado {
+    color: #2ECC71;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contador-caracteres {
+    text-align: right;
+    color: #7F8C8D;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .contenedor-formulario {
+        padding: 2rem;
+    }
+    
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('formulario-vacante');
+    const textarea = document.getElementById('carta');
+    const contador = document.getElementById('contador');
+    const botonEnviar = document.getElementById('boton-enviar');
+    const mensajeEstado = document.getElementById('mensaje-estado');
+
+    // 1. Configuración EmailJS
+    emailjs.init('FvcAGQu6Uz6QcTkNu');
+
+    // 2. Contador de caracteres
+    textarea.addEventListener('input', () => {
+        contador.textContent = textarea.value.length;
+    });
+
+    // 3. Validaciones actualizadas
+    const validaciones = {
+        telefono: value => /^[0-9]{9,15}$/.test(value),
+        cv: file => file && ['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(file.type)
+    };
+
+    // 4. Manejo del envío unificado
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        let valido = true;
+
+        // Validación de campos
+        Array.from(form.elements).forEach(element => {
+            // Restablecer estilos
+            element.classList.remove('input-invalido');
+            if(element.nextElementSibling?.classList.contains('mensaje-error-input')) {
+                element.nextElementSibling.remove();
+            }
+
+            // Validación básica
+            if(element.required && !element.checkValidity()) {
+                element.classList.add('input-invalido');
+                valido = false;
+            }
+        });
+
+        if(!valido) {
+            mostrarMensaje('Por favor complete los campos requeridos correctamente', 'error');
+            return;
+        }
+
+        try {
+            botonEnviar.disabled = true;
+            botonEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+            // Enviar con EmailJS
+            const response = await emailjs.sendForm(
+                'service_wqw2ih4',
+                'template_ljeza5u',
+                form,
+                'FvcAGQu6Uz6QcTkNu'
+            );
+
+            mostrarMensaje('¡Solicitud enviada con éxito!', 'exito');
+            form.reset();
+            contador.textContent = '0';
+        } catch (error) {
+            console.error('Error:', error);
+            mostrarMensaje('Error al enviar: ' + error.text, 'error');
+        } finally {
+            botonEnviar.disabled = false;
+            botonEnviar.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Solicitud';
+        }
+    });
+
+    function mostrarMensaje(texto, tipo) {
+        mensajeEstado.textContent = texto;
+        mensajeEstado.className = `mensaje-estado visible mensaje-${tipo}`;
+        setTimeout(() => mensajeEstado.classList.remove('visible'), 5000);
+    }
+
+    function mostrarError(elemento, mensaje) {
+        const error = document.createElement('span');
+        error.className = 'mensaje-error-input';
+        error.textContent = mensaje;
+        error.style.display = 'block';
+        elemento.after(error);
+    }
+});
+</script>

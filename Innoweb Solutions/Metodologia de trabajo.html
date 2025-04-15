@@ -1,0 +1,304 @@
+<section class="metodologia" id="procesos">
+    <div class="container-metodologia">
+        <h2 class="titulo-seccion">Nuestra Metodología de Trabajo</h2>
+        <p class="subtitulo-seccion">Un proceso probado para resultados excepcionales</p>
+
+        <div class="proceso-container">
+            <!-- Línea del tiempo del proceso -->
+            <div class="linea-tiempo"></div>
+
+            <!-- Pasos del proceso -->
+            <div class="paso proceso-paso" data-paso="1">
+                <div class="paso-icono">🗺️</div>
+                <div class="paso-contenido">
+                    <h3>1. Descubrimiento Estratégico</h3>
+                    <div class="paso-detalle">
+                        <p>Análisis profundo de necesidades y objetivos</p>
+                        <ul class="herramientas-lista">
+                            <li>Workshops colaborativos</li>
+                            <li>Benchmarking sectorial</li>
+                            <li>User Personas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paso proceso-paso" data-paso="2">
+                <div class="paso-icono">🎨</div>
+                <div class="paso-contenido">
+                    <h3>2. Diseño Centrado en el Usuario</h3>
+                    <div class="paso-detalle">
+                        <p>Prototipado iterativo y pruebas de usabilidad</p>
+                        <ul class="herramientas-lista">
+                            <li>Figma & Adobe XD</li>
+                            <li>Pruebas A/B</li>
+                            <li>Mapas de Calor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paso proceso-paso" data-paso="3">
+                <div class="paso-icono">💻</div>
+                <div class="paso-contenido">
+                    <h3>3. Desarrollo Ágil</h3>
+                    <div class="paso-detalle">
+                        <p>Implementación con sprints semanales</p>
+                        <ul class="herramientas-lista">
+                            <li>Scrum & Kanban</li>
+                            <li>CI/CD Pipeline</li>
+                            <li>Code Reviews</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paso proceso-paso" data-paso="4">
+                <div class="paso-icono">🔍</div>
+                <div class="paso-contenido">
+                    <h3>4. Control de Calidad</h3>
+                    <div class="paso-detalle">
+                        <p>Pruebas exhaustivas de rendimiento y seguridad</p>
+                        <ul class="herramientas-lista">
+                            <li>Testing Automatizado</li>
+                            <li>Auditoría SEO</li>
+                            <li>Penetration Testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paso proceso-paso" data-paso="5">
+                <div class="paso-icono">🚀</div>
+                <div class="paso-contenido">
+                    <h3>5. Lanzamiento y Evolución</h3>
+                    <div class="paso-detalle">
+                        <p>Implementación monitorizada y mejora continua</p>
+                        <ul class="herramientas-lista">
+                            <li>Analítica en tiempo real</li>
+                            <li>Optimización constante</li>
+                            <li>Soporte 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metricas-impacto">
+            <div class="metrica">
+                <div class="metrica-valor">98%</div>
+                <div class="metrica-texto">Satisfacción Clientes</div>
+            </div>
+            <div class="metrica">
+                <div class="metrica-valor">2.5x</div>
+                <div class="metrica-texto">Retorno de Inversión</div>
+            </div>
+            <div class="metrica">
+                <div class="metrica-valor">72h</div>
+                <div class="metrica-texto">Tiempo promedio de desarrollo</div>
+            </div>
+        </div>
+
+        <div class="llamado-accion">
+            <button class="boton-metodologia">Iniciar Mi Proyecto</button>
+            <button class="boton-metodologia">Metologia parte2</button>
+        </div>
+    </div>
+</section>
+
+<style>
+.metodologia {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-metodologia {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.titulo-seccion {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8rem;
+    color: #1E3A8A;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.subtitulo-seccion {
+    color: #7F8C8D;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    font-size: 1.1rem;
+}
+
+.proceso-container {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.linea-tiempo {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #2ECC71;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.paso {
+    position: relative;
+    margin-bottom: 4rem;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.paso.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.paso-icono {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 4px solid #2ECC71;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 30px rgba(46, 204, 113, 0.2);
+    z-index: 3;
+}
+
+.paso-contenido {
+    width: 45%;
+    padding: 2rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.paso:nth-child(odd) .paso-contenido {
+    margin-left: auto;
+}
+
+.paso-contenido h3 {
+    color: #1E3A8A;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.paso-detalle p {
+    color: #7F8C8D;
+    margin-bottom: 1rem;
+}
+
+.herramientas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.herramientas-lista li {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ECC71;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.metricas-impacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.metrica {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.metrica-valor {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 0.5rem;
+}
+
+.metrica-texto {
+    color: #7F8C8D;
+    font-size: 0.95rem;
+}
+
+.boton-metodologia {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #1E3A8A 0%, #2ECC71 100%);
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.boton-metodologia:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .paso-contenido {
+        width: 90%;
+        margin: 0 auto 3rem !important;
+    }
+
+    .linea-tiempo {
+        left: 20px;
+    }
+
+    .paso-icono {
+        left: 20px;
+        transform: none;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const pasos = document.querySelectorAll('.paso');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    pasos.forEach(paso => observer.observe(paso));
+});
+</script>

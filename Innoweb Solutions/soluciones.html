@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innoweb Solutions - Soluciones Digitales Integrales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-principal: #1E3A8A;
+            --verde-innovador: #2ECC71;
+            --gris-secundario: #7F8C8D;
+            --rojo-energia: #E74C3C;
+            --font-primary: 'Inter', sans-serif;
+            --font-secondary: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: #2D3748;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            padding: 1.5rem 5%;
+            background: rgba(255,255,255,0.97);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        /* Sección Hero */
+        .hero {
+            padding: 150px 5% 100px;
+            background: linear-gradient(45deg, var(--azul-principal), #142b63);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Navegación Servicios */
+        .servicios-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .servicio-tab {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .servicio-tab.active {
+            background: var(--verde-innovador);
+            color: var(--azul-principal);
+        }
+
+        /* Grid de Servicios */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .servicio-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .servicio-icono {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Colores por categoría */
+        .desarrollo .servicio-icono { background: var(--verde-innovador); }
+        .diseno .servicio-icono { background: var(--rojo-energia); }
+        .marketing .servicio-icono { background: var(--azul-principal); }
+
+        /* Footer */
+        .footer {
+            background: var(--azul-principal);
+            color: white;
+            padding: 4rem 5%;
+            margin-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .servicios-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+     <link rel="stylesheet" href="style/style.css">  
+     <link rel="stylesheet" href="style/footer.css"> 
+     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="master-header">
+        <img src="img/2.png" alt="Innoweb Solutions" class="signature-logo">
+        <button class="mobile-menu-toggle">
+            <i class="las la-bars"></i>
+        </button>
+        <nav class="nav-elite">
+            <a href="index.html" class="nav-item">Inicio</a>
+            <a href="soluciones.html" class="nav-item">Soluciones</a>
+            <a href="Metodologia de trabajo.html" class="nav-item">Metodología</a>
+            <a href="PORTAFOLIO.html" class="nav-item">Portafolio</a>
+            <a href="contactos.html" class="nav-item">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Soluciones Digitales para el Éxito Empresarial</h1>
+        <p>Innovación tecnológica y diseño estratégico para potenciar tu negocio</p>
+    </section>
+
+    <section id="servicios">
+        <div class="servicios-nav">
+            <button class="servicio-tab active" data-category="desarrollo">Desarrollo</button>
+            <button class="servicio-tab" data-category="diseno">Diseño</button>
+            <button class="servicio-tab" data-category="marketing">Marketing</button>
+        </div>
+
+        <!-- Desarrollo -->
+        <div class="servicios-grid desarrollo show">
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-code fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Desarrollo Web Front-end</h3>
+                <p>Aplicaciones modernas con React, Vue.js y tecnologías de vanguardia</p>
+            </div>
+            
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-server fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Desarrollo Web Back-end</h3>
+                <p>Arquitecturas escalables con Node.js, Python y bases de datos optimizadas</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-shopping-cart fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Desarrollo de E-commerce</h3>
+                <p>Plataformas comerciales con WooCommerce, Shopify y soluciones personalizadas</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fab fa-wordpress fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Desarrollo de CMS</h3>
+                <p>Sistemas de gestión de contenido personalizados y optimizados</p>
+            </div>
+        </div>
+
+        <!-- Diseño -->
+        <div class="servicios-grid diseno">
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-palette fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Diseño UI</h3>
+                <p>Interfaces intuitivas y atractivas para una mejor interacción</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-project-diagram fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Diseño UX</h3>
+                <p>Experiencias de usuario centradas en la conversión</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-mobile-alt fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Diseño Responsive</h3>
+                <p>Adaptación perfecta a todos los dispositivos</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-brush fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Diseño Gráfico</h3>
+                <p>Identidad visual coherente y profesional</p>
+            </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="servicios-grid marketing">
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-search fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Optimización SEO</h3>
+                <p>Posicionamiento estratégico en buscadores</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-hashtag fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Gestión de Redes</h3>
+                <p>Estrategias sociales para engagement y conversiones</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-ad fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Publicidad Online</h3>
+                <p>Campañas PPC y remarketing efectivas</p>
+            </div>
+
+            <div class="servicio-card">
+                <div class="servicio-icono">
+                    <i class="fas fa-blog fa-lg" style="color: white;"></i>
+                </div>
+                <h3>Marketing de Contenidos</h3>
+                <p>Estrategias de contenido para generar leads</p>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Footer a <!-- Secciones adicionales: Portafolio, Procesos, Contacto -->
+    <footer class="signature-footer">
+        <div class="footer-wave"></div>
+        
+        <div class="footer-grid">
+            <!-- Columna Innovadora -->
+            <div class="footer-brand">
+                <img src="img/2.png" alt="Innoweb" class="footer-logo">
+                <p class="footer-slogan">Transformando ideas en experiencias digitales</p>
+                <div class="tech-stack">
+                    <div class="stack-item">AI</div>
+                    <div class="stack-item">CLOUD</div>
+                    <div class="stack-item">IoT</div>
+                </div>
+            </div>
+    
+            <!-- Menú Holográfico -->
+            <div class="footer-nav">
+                <div class="nav-column">
+                    <h4 class="nav-title">Explorar</h4>
+                    <div class="nav-links">
+                        <a href="#" class="hologram-link">Servicios</a>
+                        <a href="#" class="hologram-link">Portafolio</a>
+                        <a href="#" class="hologram-link">Metodología</a>
+                    </div>
+                </div>
+                
+                <div class="nav-column">
+                    <h4 class="nav-title">Conectar</h4>
+                    <div class="nav-links">
+                        <a href="#" class="hologram-link">Consultoría</a>
+                        <a href="#" class="hologram-link">Carreras</a>
+                        <a href="#" class="hologram-link">Soporte</a>
+                    </div>
+                </div>
+            </div>
+    <div class="flex-footer">
+            <!-- Formulario Futurista -->
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Actualizaciones Tecnológicas</h4>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Ingresa tu email" class="neon-input">
+                    <button class="quantum-button">
+                        <span class="button-text">Suscribirse</span>
+                        <div class="particle-effect"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Redes Sociales Holográficas -->
+        <div class="social-holograms">
+            <a href="#" class="hologram-icon" data-tooltip="LinkedIn">
+                <div class="hologram-base"></div>
+                <i class="lab la-linkedin-in"></i>
+            </a>
+            <a href="#" class="hologram-icon" data-tooltip="GitHub">
+                <div class="hologram-base"></div>
+                <i class="lab la-github"></i>
+            </a>
+            <a href="#" class="hologram-icon" data-tooltip="Twitter">
+                <div class="hologram-base"></div>
+                <i class="lab la-instagram"></i>
+            </a>
+        </div>
+    </div>
+        <!-- Derechos con Efecto Matrix -->
+        <div class="matrix-rights">
+            <p>© <span class="current-year"></span> Innoweb Solutions - <span class="code-effect">Código</span> con <span class="heartbeat">❤</span></p>
+        </div>
+    
+        <!-- Botón Flotante -->
+        <div class="quantum-scroll">
+            <div class="scroll-orb"></div>
+        </div>
+
+    <script>
+    document.querySelector('.current-year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        // Scroll Reveal
+        const scrollElements = document.querySelectorAll('[data-scroll]');
+        
+        const elementInView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return elementTop <= window.innerHeight * 0.9;
+        };
+
+        const displayScrollElement = (element) => {
+            element.setAttribute('data-scroll', 'in');
+        };
+
+        const handleScroll = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-elite').classList.toggle('active');
+});
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const phrases = document.querySelectorAll('.phrase');
+            let current = 0;
+            
+            function rotatePhrases() {
+                phrases[current].classList.remove('active');
+                current = (current + 1) % phrases.length;
+                phrases[current].classList.add('active');
+            }
+            
+            // Intervalo de cambio (5 segundos)
+            setInterval(rotatePhrases, 5000);
+            
+            // Iniciar primera transición después del delay inicial
+            setTimeout(() => {
+                phrases[0].classList.add('active');
+            }, 1000);
+        });
+        </script>
+    </footer>
+
+    <script>
+        // Tabs de servicios
+        const tabs = document.querySelectorAll('.servicio-tab');
+        const grids = document.querySelectorAll('.servicios-grid');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remover clase activa
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Ocultar todos los grids
+                grids.forEach(grid => grid.classList.remove('show'));
+
+                // Mostrar grid correspondiente
+                const category = tab.dataset.category;
+                document.querySelector(`.${category}`).classList.add('show');
+            });
+        });
+
+        // Menú responsive
+        const menuToggle = document.createElement('div');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        menuToggle.style.fontSize = '1.5rem';
+        menuToggle.style.cursor = 'pointer';
+        menuToggle.addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        document.querySelector('.header').appendChild(menuToggle);
+    </script>
+</body>
+</html>
